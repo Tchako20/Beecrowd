@@ -1,5 +1,6 @@
 import 'dart:io';
 
+
 void main() {
   /*Algoritmo que avalia se o usuario é menor de idade ou não */
   print("=====digite sua idade=====");
