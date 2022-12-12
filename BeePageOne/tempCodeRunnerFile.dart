@@ -1,40 +1,33 @@
-import 'dart:ffi';
-import 'dart:io';
-
-/*Leia um valor de ponto flutuante com duas casas decimais. Este valor representa um valor monetário. A seguir, calcule o menor número de notas e moedas possíveis
- no qual o valor pode ser decomposto. As notas consideradas são de 100, 50, 20, 10, 5, 2. As moedas possíveis são de 1, 0.50, 0.25, 0.10, 0.05 e 0.01. 
- A seguir mostre a relação de notas necessárias.*/
-// bee1021.dart
-void main() {
-  double nota, resto, cem, cinquenta, vinte, dez, cinco, dois;
+ double nota, resto, cem, cinquenta, vinte, dez, cinco, dois;
   double umReal,
       cinquentaCentavos,
       vinteCincoCentavos,
       dezCentavos,
       cincoCentavos,
       umCentavo;
- 
+
   nota = double.parse(stdin.readLineSync()!);
-  nota *= 100.00;
   
+  nota*=100;
 
   cem = nota / 10000;
   resto = nota % 1000;
 
-  cinquenta = resto / 5000;
-  resto = resto % 5000;
-
-  vinte = resto / 2000;
-  resto = resto % 2000;
-
-  dez = resto / 1000;
-  resto = resto % 1000;
-
-  cinco = resto / 500;
+  cinquenta = resto / 500;
   resto = resto % 500;
 
-  dois = resto / 200;
-  resto = resto % 200;
+  vinte = resto / 200;
+  resto = resto % 20;
+
+  dez = resto / 100;
+  resto = resto % 100;
+
+  cinco = resto / 50;
+  resto = resto % 50;
+
+  dois = resto / 20;
+  resto = resto % 20;
+
 
   umReal = resto / 100;
   resto = resto % 100;
@@ -68,4 +61,3 @@ void main() {
   print('${dezCentavos.toInt()} moeda(s) de R\$ 0.10');
   print('${cincoCentavos.toInt()} moeda(s) de R\$ 0.05');
   print('${umCentavo.toInt()} moeda(s) de R\$ 0.01');
-}
