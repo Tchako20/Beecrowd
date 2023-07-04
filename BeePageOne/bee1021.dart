@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:io';
 
 /*Leia um valor de ponto flutuante com duas casas decimais. Este valor representa um valor monetário. A seguir, calcule o menor número de notas e moedas possíveis
@@ -13,13 +12,13 @@ void main() {
       dezCentavos,
       cincoCentavos,
       umCentavo;
- 
+
   nota = double.parse(stdin.readLineSync()!);
-  nota *= 100.00;
-  
+
+  nota *= 100;
 
   cem = nota / 10000;
-  resto = nota % 1000;
+  resto = nota % 10000;
 
   cinquenta = resto / 5000;
   resto = resto % 5000;
@@ -40,19 +39,19 @@ void main() {
   resto = resto % 100;
 
   cinquentaCentavos = resto / 50;
-  cinquentaCentavos = resto % 50;
+  resto = resto % 50;
 
   vinteCincoCentavos = resto / 25;
-  vinteCincoCentavos = resto % 25;
+  resto = resto % 25;
 
   dezCentavos = resto / 10;
-  dezCentavos = resto % 10;
+  resto = resto % 10;
 
   cincoCentavos = resto / 5;
-  cincoCentavos = resto % 5;
+  resto = resto % 5;
 
   umCentavo = resto / 1;
-  umCentavo = resto % 1;
+  resto = resto % 1;
 
   print('NOTAS:');
   print('${cem.toInt()} nota(s) de R\$ 100.00');

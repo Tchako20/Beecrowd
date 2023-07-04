@@ -14,10 +14,17 @@ void main() {
   c = int.parse(entradaSplit[2]);
   d = int.parse(entradaSplit[3]);
 
-  if ((b > c) && (d > a) && (a > b) && (c > d) && (c > 0) && (a % 2 == 0)) {
+  int maiorCD = c + d;
+  int maiorAB = a + b;
+
+  if ((b > c) &&
+      (d > a) &&
+      (d % 2 == 0) &&
+      (maiorCD > maiorAB) &&
+      (c > 0) &&
+      (a % 2 == 0)) {
     print('Valores aceitos');
   } else {
     print('Valores nao aceitos');
   }
 }
- 
