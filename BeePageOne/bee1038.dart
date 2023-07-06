@@ -5,6 +5,7 @@ import 'dart:io';
 
 // Saída
 // O arquivo de saída deve conter a mensagem "Total: R$ " seguido pelo valor a ser pago, com 2 casas após o ponto decimal.
+// bee1038.dart
 
 void main()
 {
